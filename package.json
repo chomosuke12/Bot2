@@ -1,5 +1,5 @@
 {
-  "name": "tmuxwabot",
+  "name": "chomowabot",
   "version": "1.0.0",
   "description": "whatsappbot termux",
   "main": "index.js",
@@ -28,15 +28,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fdciabdul/termux-whatsapp-bot.git"
+    "url": "git+https://github.com/chomosuke12/Bot2"
   },
   "keywords": [
     "k"
   ],
-  "author": "Abdul Muttaqin",
+  "author": "AL Chomosuke",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fdciabdul/termux-whatsapp-bot/issues"
+    "url": "https://github.com/chomosuke12/Bot2/issues"
   },
-  "homepage": "https://github.com/fdciabdul/termux-whatsapp-bot#readme"
+  "homepage": "https://github.com/chomosuke12/Bot2#readme"
 }
