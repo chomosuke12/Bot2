@@ -71,9 +71,9 @@ conn.on('message-new', async(m) =>
 
 // Groups
 
-if (text.includes("!buatgrup"))
+if (text.includes("?buatgrup"))
    {
-var nama = text.split("!buatgrup")[1].split("-nomor")[0];
+var nama = text.split("?buatgrup")[1].split("-nomor")[0];
 var nom = text.split("-nomor")[1];
 var numArray = nom.split(",");
 for ( var i = 0; i < numArray.length; i++ ) {
@@ -88,8 +88,8 @@ conn.sendMessage(group.gid, "hello everyone", MessageType.extendedText) // say h
 }
 
 // FF
-if(text.includes("!cek")){
-var num = text.replace(/!cek/ , "")
+if(text.includes("?cek")){
+var num = text.replace(/?cek/ , "")
 var idn = num.replace("0","+62");
 
 console.log(id);
@@ -99,16 +99,16 @@ const exists = await conn.isOnWhatsApp (gg)
 console.log(exists);
 conn.sendMessage(id ,`${gg} ${exists ? " exists " : " does not exist"} on WhatsApp`, MessageType.text)
 }
-if (text == '!menu'){
+if (text == '?menu'){
 conn.sendMessage(id, menu.menu ,MessageType.text);
 }
-else if (text == '!menu1'){
+else if (text == '?menu1'){
 conn.sendMessage(id, menu.menu1 ,MessageType.text);
 }
-else if (text == '!menu2'){
+else if (text == '?menu2'){
 conn.sendMessage(id, menu.menu2 ,MessageType.text);
 }
-else if (text == '!menu3'){
+else if (text == '?menu3'){
 conn.sendMessage(id, menu.menu3 ,MessageType.text);
 }
 
@@ -116,7 +116,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    {
       let caption = imageMessage.caption.toLocaleLowerCase()
       const buffer = await conn.downloadMediaMessage(m) // to decrypt & use as a buffer
-      if (caption == '!sticker')
+      if (caption == '?sticker')
       {
          const stiker = await conn.downloadAndSaveMediaMessage(m) // to decrypt & save to file
 
@@ -136,7 +136,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    {
       let is = m.message.conversation.toLocaleLowerCase()
 
-      if (is == '!pantun')
+      if (is == '?pantun')
       {
 
          fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-pantun-pakboy.txt')
@@ -151,9 +151,9 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
       }
 
    }
-   if (text.includes("!yt"))
+   if (text.includes("?yt"))
    {
-      const url = text.replace(/!yt/, "");
+      const url = text.replace(/?yt/, "");
       const exec = require('child_process').exec;
 
       var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
@@ -213,7 +213,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    }
 
 
-   if (text.includes("!nulis"))
+   if (text.includes("?nulis"))
    {
 
       const
@@ -221,7 +221,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
          spawn
       } = require("child_process");
       console.log("writing...")
-      const teks = text.replace(/!nulis/, "")
+      const teks = text.replace(/?nulis/, "")
       const split = teks.replace(/(\S+\s*){1,10}/g, "$&\n")
       const fixedHeight = split.split("\n").slice(0, 25).join("\\n")
       console.log(split)
@@ -251,7 +251,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
    }
 
 
-   if (text.includes("!quotes"))
+   if (text.includes("?quotes"))
    {
       var url = 'https://jagokata.com/kata-bijak/acak.html'
       axios.get(url)
@@ -274,7 +274,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
          });
    }
 
-   if (text.includes("!ptl"))
+   if (text.includes("?ptl"))
    {
     var items = ["ullzang girl", "cewe cantik", "hijab cantik", "korean girl"];
     var cewe = items[Math.floor(Math.random() * items.length)];
@@ -303,7 +303,7 @@ conn.sendMessage(id, menu.menu3 ,MessageType.text);
     });
     }
 
-if (text.includes("!randomanime"))
+if (text.includes("?randomanime"))
    {
     var items = ["anime girl", "anime cantik", "anime", "anime aesthetic"];
     var cewe = items[Math.floor(Math.random() * items.length)];
@@ -332,7 +332,7 @@ if (text.includes("!randomanime"))
     });
     }
 
-if (text.includes("!scdl")){
+if (text.includes("?scdl")){
 const fs = require("fs");
 const scdl = require("./lib/scdl");
 
@@ -344,7 +344,7 @@ scdl("https://m.soundcloud.com/abdul-muttaqin-701361735/lucid-dreams-gustixa-ft-
 
 
 
- else if (text.includes("!tts")) {
+ else if (text.includes("?tts")) {
   var teks = text.split("!ttsid ")[1];
   var path = require('path');
   var text1 = teks.slice(6);
